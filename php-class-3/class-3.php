@@ -6,6 +6,8 @@ $lastName = "X";
 echo '$firstname.$lastname';
 echo "$firstName $lastName";
 
+echo "</br>";
+
 // Here Doc
 $age = 65;
 echo <<< PROJECT
@@ -30,7 +32,7 @@ echo 2354;
 echo 23.54;
 
 // print "Tiger","Lion"; (wrong syntx)
-// 1. Print Statement can'nt parse two statement
+// 1. Print Statement can't parse two statement
 // 2. It is solwer than echo.
 print "Tiger"." Lion";
 
