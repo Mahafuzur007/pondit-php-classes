@@ -127,7 +127,7 @@ function alarm(){
 }
 alarm();
 
-function alarm($name){
+function alarm2($name){
     return 'Good Morning '.$name;
 }
 echo alarm('Bangladesh'); //uses of aurguments.
