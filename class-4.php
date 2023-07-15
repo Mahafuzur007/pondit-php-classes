@@ -139,7 +139,7 @@ function sum($num1, int $num2){
 }
 echo sum(1,'20b10b');
 
-String Function:
+// String Function:
 
 $name = 'Mahafuzur Rahman';
 echo ($name).'<br>';
