@@ -1,0 +1,39 @@
+Single Quoted: 
+    - single quote doesn't parse the data. shown by string.
+    - can use double qoute inside sigle quote.
+    - use forward slace '\' to use single quote within
+      single quote. ('Hello \'World\'')
+
+Double Quoted:
+    - double quote parse the data.
+    - can use single qoute inside double quote.
+    - -use forward slace '\' to use double quote within double quote. ("Hello \"World\"'")
+
+
+Heredoc:
+    - It Works similar as double quotes. It can print variable's value.
+    - It can parse value.
+    - Can use single quote and double quote.
+    **syntx: 
+echo <<< MYDATA(:Here MYDATA is token name)
+Welcome to PHP. Example of "Heredoc" $variable.
+MYDATA;
+
+Nowdoc:
+    - It works similar as single quote.
+    - It can'nt parse value.
+    **syntx: 
+echo <<< 'MYDATA'(:Here MYDATA is token name and its should be written inside the single quote.)
+Welcome to PHP. Example of "Heredoc" $variable.
+MYDATA; (:Quote is'nt use in closing token.)
+
+**** Remove all the spaces before those syntx.***
+
+Print:
+    - Print Statement can't parse two statement.
+    - print is solwer than echo.
+    - print can return vlaue which is set to 1.
+
+echo:
+    - echo can't return value.
+    - echo can parse multiple statements/parameters.
