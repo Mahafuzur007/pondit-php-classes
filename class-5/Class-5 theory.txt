@@ -1,0 +1,17 @@
+$_GET:
+    - In GET method we can not send large amount of data rather limited data is sent because the request parameter is appended into the URL.
+    - Get method are stored in cache memory of browser.
+    - GET request is comparatively less secure because the data is exposed in the URL bar.
+    - GET method request can be saved as bookmark in browser.
+    - Request made through GET method are stored in Browser history.
+    - In GET method only ASCII characters are allowed.
+    - It has characters limitation which is 2048.
+    
+
+$_POST:
+    - In POST method large amount of data can be sent because the request parameter is appended into the body.
+    - POST request is comparatively more secure because the data is not exposed in the URL bar.
+    - Request made through POST method is not stored in Browser history.
+    - POST method request can not be saved as bookmark in browser.
+    - Request made through POST method are not stored in cache memory of Browser.
+    - In POST method all types of data is allowed.
