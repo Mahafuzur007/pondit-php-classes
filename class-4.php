@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -56,7 +56,7 @@ for($i=0, $elements = count($students); $i<$elements ; $i++){
     echo $students [$i] ."<pre>";
 }
 
-// foreach_loop:
+foreach_loop:
 $students = [
     'stu0' => 'messi',
     'stu1' => 'dimaria',
@@ -181,4 +181,4 @@ print_r (str_split ($name));
 
 ?>
 </body>
-</html>
+</html> -->
