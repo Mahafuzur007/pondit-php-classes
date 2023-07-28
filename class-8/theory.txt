@@ -1,0 +1,5 @@
+Include Statement:
+- In Include Statement if the 1st Statement is error then the other Statements will be executed.
+
+Require Statement:
+- In Require Statement if the 1st Statement is error then the other Statements will not be executed.
