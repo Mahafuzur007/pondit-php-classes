@@ -7,7 +7,6 @@ use PDOException;
 
 class ProductController
 {
-
     private $dbHost = 'localhost';
     private $dbName = 'ecom';
     private $dbUser = 'root';
@@ -43,10 +42,38 @@ class ProductController
     public function store(array $data)
     {
         try {
-            $query = "INSERT INTO products(title) VALUES(:title)";
+            
+            // Validation Start
+            if (strlen($data['title'])>255){
+                $_SESSION['errors']['title'] = 'Title should not be more than 255 charcter';
+            }
+
+            $allowedImageFormats = ['jpeg','jpg','png'];
+            $fileName = $_FILES['image']['name'];
+            $explodeFileName = explode('.', $fileName);
+            $fileExtension = end($explodeFileName);
+            if ($_FILES['image']['size'] > 50000 ){
+                $_SESSION['errors']['image'] = 'Maximum 500KB allowed';
+            }else if (!in_array($fileExtension, $allowedImageFormats)){
+                $_SESSION['errors']['image'] = 'Please upload' . " " . implode('/' , $allowedImageFormats);
+            }
+
+            // Validation End
+            if  (isset($_SESSION['errors'])){
+            header('location: ./../views/create.php');
+            die();
+            }
+
+            $uniqueFileName = date('Y-m-d') . '-' . time() . '.' . $fileExtension;
+            $tempName = $_FILES['image']['tmp_name'];
+            $uploadDir = './../assets/uploads/products/';
+            move_uploaded_file($tempName, $uploadDir . $uniqueFileName);
+
+            $query = "INSERT INTO products(title, image) VALUES(:title, :image)";
             $stmt = $this->conn->prepare($query);
             $stmt->execute(array(
                 ':title' => $data['title'],
+                ':image' => $uniqueFileName
             ));
 
             $_SESSION['message'] = 'Created Successfully';
